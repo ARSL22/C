@@ -23,14 +23,16 @@ char	*ft_strstr(char*str, char*to_find)
 		return (str);
 	while (str[i] != '\0')
 	{
-		x = 0;
-		while (str[i + x] == to_find [x])
+		while (str[i + x] == to_find [x] && str[x + i] != '\0')
 		{
-			x++;
+			i++;
 		}
-		i++;
+		if (to_find[x] == '\0')
+			return (str + x);
+		x++;
+		i = 0;
 	}
-	return (str);
+	return (0);
 }
 /*
 int 	main(void)
