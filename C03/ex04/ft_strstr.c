@@ -19,15 +19,16 @@ char	*ft_strstr(char*str, char*to_find)
 	int	x;
 
 	i = 0;
-	if (*to_find == '\0')
+	x = 0;
+	if (to_find == '\0')
 		return (str);
-	while (str[i] != '\0')
+	while (str[x] != '\0')
 	{
-		while (str[i + x] == to_find [x] && str[x + i] != '\0')
+		while (str[x + i] == to_find [i] && str[x + i] != '\0')
 		{
 			i++;
 		}
-		if (to_find[x] == '\0')
+		if (to_find[i] == '\0')
 			return (str + x);
 		x++;
 		i = 0;
